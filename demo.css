@@ -1801,3 +1801,134 @@ input:checked+.slider:before {
     display: flex;
     align-items: center;
 }
+
+/* =========================================
+   Responsive Styles for Demo Page
+   ========================================= */
+
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        gap: 16px;
+    }
+
+    .metrics-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparison-video-row {
+        grid-template-columns: repeat(2, 1fr);
+        /* 3 cols -> 2 cols */
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        /* 2 cols -> 1 col */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Header */
+    .dashboard-header {
+        padding: 0 16px;
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 12px;
+    }
+
+    .header-left,
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 12px;
+    }
+
+    .top-nav {
+        overflow-x: auto;
+        width: 100%;
+        padding-bottom: 4px;
+        gap: 16px;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+    }
+
+    /* Sub Navigation */
+    .sub-nav {
+        gap: 4px;
+    }
+
+    .sub-nav-item {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* Metrics */
+    .metrics-row {
+        grid-template-columns: 1fr;
+        /* Single column */
+    }
+
+    /* Video Grid */
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Charts */
+    .analysis-grid-row {
+        grid-template-columns: 1fr;
+    }
+
+    .main-chart-wrapper {
+        height: 250px;
+    }
+
+    /* Comparison Page */
+    .comparison-video-row {
+        grid-template-columns: 1fr;
+    }
+
+    .c-video-card {
+        display: flex;
+        align-items: center;
+    }
+
+    .thumbnail-wrapper {
+        width: 120px;
+        aspect-ratio: 16/9;
+        flex-shrink: 0;
+    }
+
+    .comp-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .comp-table {
+        min-width: 600px;
+        /* Force scroll */
+    }
+
+    /* Channel Page */
+    .channel-select-container {
+        min-height: 40vh;
+    }
+
+    /* Settings Page */
+    .setting-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .setting-actions {
+        margin-top: 8px;
+        width: 100%;
+        text-align: right;
+    }
+}
