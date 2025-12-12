@@ -1834,18 +1834,35 @@ input:checked+.slider:before {
 
     /* Header */
     .dashboard-header {
-        padding: 0 16px;
+        padding: 10px 16px;
         height: auto;
         flex-direction: column;
         align-items: flex-start;
-        padding-bottom: 12px;
+        gap: 12px;
     }
 
-    .header-left,
+    .header-left {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        /* ロゴとバッジが溢れないように */
+    }
+
+    .logo-area {
+        font-size: 1rem;
+    }
+
+    /* ヘッダー内の警告（デモモードなど）はスマホでは邪魔なので下へ逃がすか、簡略化 */
+    .header-warning {
+        display: none;
+        /* 一旦非表示にしてすっきりさせる */
+    }
+
     .header-right {
         width: 100%;
         justify-content: space-between;
-        margin-top: 12px;
+        margin-top: 0;
+        /* 上のgapで調整 */
     }
 
     .top-nav {
@@ -1853,15 +1870,28 @@ input:checked+.slider:before {
         width: 100%;
         padding-bottom: 4px;
         gap: 16px;
+        -webkit-overflow-scrolling: touch;
+        /* スムーズスクロール */
+    }
+
+    .top-nav::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .top-nav::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
     }
 
     .nav-link {
         white-space: nowrap;
+        font-size: 0.8rem;
     }
 
     /* Sub Navigation */
     .sub-nav {
         gap: 4px;
+
     }
 
     .sub-nav-item {
