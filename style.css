@@ -1045,11 +1045,22 @@ footer {
     }
 
     .header-actions .btn {
-        font-size: 0.65rem;
-        /* かなり小さくして収まるように調整 */
-        padding: 6px 8px;
+        font-size: 0.7rem;
+        padding: 8px 10px;
         display: inline-block !important;
-        /* 強制的に表示 */
+    }
+
+    /* 「無料で今のチャンネルを見る」を「無料で見る」に変更 */
+    .header-actions .btn-pink {
+        font-size: 0;
+        /* 元のテキストを隠す */
+        padding: 8px 12px;
+    }
+
+    .header-actions .btn-pink::before {
+        content: "無料で見る";
+        font-size: 0.75rem;
+        visibility: visible;
     }
 
     /* 元々のdisplay:noneを削除し、全てのボタンを表示 */
