@@ -1037,24 +1037,30 @@ footer {
         min-width: auto;
     }
 
-    /* ボタン群：スマホでは「無料で始める」だけ残して他を消す（スペース確保のため） */
     /* スマホでも全てのボタンを表示し、サイズを調整 */
     .header-actions {
         gap: 4px;
+        display: flex !important;
+        /* 強制的にflex表示 */
     }
 
     .header-actions .btn {
         font-size: 0.65rem;
         /* かなり小さくして収まるように調整 */
         padding: 6px 8px;
+        display: inline-block !important;
+        /* 強制的に表示 */
     }
 
     /* 元々のdisplay:noneを削除し、全てのボタンを表示 */
     .header-actions .btn-ghost,
     .header-actions .btn-blue,
     .header-actions .btn-pink {
-        display: inline-block;
+        display: inline-block !important;
     }
+
+    /* ログインボタンの「ログイン」テキストをアイコンにする等の調整も検討できますが
+       まずは表示させることを優先します */
 
     /* 2. ヒーローセクション（メインビジュアル） */
     .hero {
