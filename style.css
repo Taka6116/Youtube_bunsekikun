@@ -1038,14 +1038,22 @@ footer {
     }
 
     /* ボタン群：スマホでは「無料で始める」だけ残して他を消す（スペース確保のため） */
-    .header-actions .btn-ghost,
-    .header-actions .btn-blue {
-        display: none;
+    /* スマホでも全てのボタンを表示し、サイズを調整 */
+    .header-actions {
+        gap: 4px;
     }
 
+    .header-actions .btn {
+        font-size: 0.65rem;
+        /* かなり小さくして収まるように調整 */
+        padding: 6px 8px;
+    }
+
+    /* 元々のdisplay:noneを削除し、全てのボタンを表示 */
+    .header-actions .btn-ghost,
+    .header-actions .btn-blue,
     .header-actions .btn-pink {
-        font-size: 0.8rem;
-        padding: 8px 12px;
+        display: inline-block;
     }
 
     /* 2. ヒーローセクション（メインビジュアル） */
