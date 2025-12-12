@@ -1032,17 +1032,23 @@ footer {
 /* --- スマホ・タブレット縦 (768px以下) --- */
 @media (max-width: 768px) {
 
-    /* 1. ヘッダーのスマホ最適化 */
+    /* 1. ヘッダーのスマホ最適化：縦積みにして中央寄せ */
     .site-header {
-        height: 60px;
-        /*高さを少し小さく*/
-        padding: 0 15px;
+        height: auto;
+        padding: 10px 0;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .logo {
-        font-size: 1.1rem;
-        /* ロゴを少し小さく */
-        min-width: auto;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    /* 2. ヒーローセクションの余白調整（ヘッダーが高くなるため） */
+    .hero {
+        margin-top: 110px;
+        /* ヘッダーの高さ分+α */
     }
 
     /* スマホでも全てのボタンを表示し、サイズを調整 */
@@ -1051,6 +1057,11 @@ footer {
         /* 少し広げる */
         display: flex !important;
         align-items: center;
+        justify-content: center;
+        /* 中央寄せ */
+        width: 100%;
+        flex-wrap: wrap;
+        /* 画面幅が極端に狭い場合の保険 */
     }
 
     .header-actions .btn {
