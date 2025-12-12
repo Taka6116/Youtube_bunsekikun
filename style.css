@@ -182,6 +182,14 @@ h4 {
     /* テキストの折り返し防止 */
 }
 
+.text-sp {
+    display: none;
+}
+
+.text-pc {
+    display: inline;
+}
+
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1039,9 +1047,10 @@ footer {
 
     /* スマホでも全てのボタンを表示し、サイズを調整 */
     .header-actions {
-        gap: 4px;
+        gap: 8px;
+        /* 少し広げる */
         display: flex !important;
-        /* 強制的にflex表示 */
+        align-items: center;
     }
 
     .header-actions .btn {
@@ -1050,17 +1059,23 @@ footer {
         display: inline-block !important;
     }
 
-    /* 「無料で今のチャンネルを見る」を「無料で見る」に変更 */
+    /* テキスト切り替えロジック */
+    .text-pc {
+        display: none !important;
+    }
+
+    .text-sp {
+        display: inline !important;
+    }
+
     .header-actions .btn-pink {
-        font-size: 0;
-        /* 元のテキストを隠す */
-        padding: 8px 12px;
+        /* font-size: 0; 削除 */
+        /* padding: 8px 12px; */
     }
 
     .header-actions .btn-pink::before {
-        content: "無料で見る";
-        font-size: 0.75rem;
-        visibility: visible;
+        content: none !important;
+        /* 前回の修正を打ち消し */
     }
 
     /* 元々のdisplay:noneを削除し、全てのボタンを表示 */
